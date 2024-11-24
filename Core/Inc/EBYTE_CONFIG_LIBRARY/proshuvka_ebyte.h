@@ -32,9 +32,9 @@ extern UART_HandleTypeDef huart5;
 
 typedef enum {
 	E22_400T22S = 0x11,
-	E22_230T22S = 0x12,
-	E22_900T30D = 0x13,
-	E32_170T30D = 0x14,
+	//E22_230T22S = 0x12,
+	//E22_900T30D = 0x13,
+	//E32_170T30D = 0x14,
 	// E22_230T37S = 0x15,
 	// E22_400T37S = 0x16
 } SelectEbyteChip_e;
