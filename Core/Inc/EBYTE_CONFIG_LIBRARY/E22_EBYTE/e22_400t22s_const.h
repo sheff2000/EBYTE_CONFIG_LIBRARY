@@ -7,143 +7,133 @@
 
 #ifndef INC_E22_EBYTE_E22_400T22S_CONST_H_
 #define INC_E22_EBYTE_E22_400T22S_CONST_H_
+
 #include "config_common_const.h"
 
-
+/* Перечисление скорости UART */
 typedef enum {
-    UART_RATE_1200_e22_400 = 0b000,
-	UART_RATE_2400_e22_400 = 0b001,
-	UART_RATE_4800_e22_400 = 0b010,
-	UART_RATE_9600_e22_400 = 0b011,
-	UART_RATE_19200_e22_400 = 0b100,
-	UART_RATE_38400_e22_400 = 0b101,
-	UART_RATE_57600_e22_400 = 0b110,
-	UART_RATE_115200_e22_400 = 0b111
-} UART_Rate_e22_400_e;
+    UART_RATE_1200_e22_400_22 = 0b000,   // 1200 bps
+    UART_RATE_2400_e22_400_22 = 0b001,   // 2400 bps
+    UART_RATE_4800_e22_400_22 = 0b010,   // 4800 bps
+    UART_RATE_9600_e22_400_22 = 0b011,   // 9600 bps (по умолчанию)
+    UART_RATE_19200_e22_400_22 = 0b100,  // 19200 bps
+    UART_RATE_38400_e22_400_22 = 0b101,  // 38400 bps
+    UART_RATE_57600_e22_400_22 = 0b110,  // 57600 bps
+    UART_RATE_115200_e22_400_22 = 0b111  // 115200 bps
+} UART_Rate_e22_400_22_e;
 
+/* Перечисление режима четности UART */
 typedef enum {
-    PARITY_8N1_e22_400 = 0b00,
-    PARITY_8O1_e22_400 = 0b01,
-    PARITY_8E1_e22_400 = 0b10,
-    PARITY_8N1_ALT_e22_400 = 0b11
-} UART_Parity_e22_400_e;
+    PARITY_8N1_e22_400_22 = 0b00,    // 8N1 (по умолчанию)
+    PARITY_8O1_e22_400_22 = 0b01,    // 8O1
+    PARITY_8E1_e22_400_22 = 0b10,    // 8E1
+    PARITY_8N1_ALT_e22_400_22 = 0b11 // 8N1 (альтернатива)
+} UART_Parity_e22_400_22_e;
 
+/* Перечисление скорости передачи данных по воздуху */
 typedef enum {
-	//AIR_RATE_2400_e22_400 = 0b000,
-	//AIR_RATE_2400_e22_400 = 0b001,
-	AIR_RATE_2400_e22_400 = 0b010,
-	AIR_RATE_4800_e22_400 = 0b011,
-	AIR_RATE_9600_e22_400 = 0b100,
-	AIR_RATE_19200_e22_400 = 0b101,
-	AIR_RATE_38400_e22_400 = 0b110,
-	AIR_RATE_62500_e22_400 = 0b111
-} WirelessAirDataRate_e22_400_e;
+    AIR_RATE_2400_e22_400_22 = 0b010,   // 2400 bps (по умолчанию)
+    AIR_RATE_4800_e22_400_22 = 0b011,   // 4800 bps
+    AIR_RATE_9600_e22_400_22 = 0b100,   // 9600 bps
+    AIR_RATE_19200_e22_400_22 = 0b101,  // 19200 bps
+    AIR_RATE_38400_e22_400_22 = 0b110,  // 38400 bps
+    AIR_RATE_62500_e22_400_22 = 0b111   // 62500 bps
+} WirelessAirDataRate_e22_400_22_e;
 
+/* Перечисление длины под-пакета */
 typedef enum {
-	SUB_PACKET_240_e22_400 = 0b00,
-	SUB_PACKET_128_e22_400 = 0b01,
-	SUB_PACKET_64_e22_400 = 0b10,
-	SUB_PACKET_32_e22_400 = 0b11
-} Sub_Packet_e22_400_e;
+    SUB_PACKET_240_e22_400_22 = 0b00,   // 240 байт (по умолчанию)
+    SUB_PACKET_128_e22_400_22 = 0b01,   // 128 байт
+    SUB_PACKET_64_e22_400_22 = 0b10,    // 64 байта
+    SUB_PACKET_32_e22_400_22 = 0b11     // 32 байта
+} Sub_Packet_e22_400_22_e;
 
+/* Включение/отключение мониторинга уровня шума RSSI */
 typedef enum {
-	RSSI_ENV_DISABLED_e22_400 = 0b0,
-	RSSI_ENV_ENABLE_e22_400 = 0b1
-} RSSI_Env_e22_400_e;
+    RSSI_ENV_DISABLED_e22_400_22 = 0b0, // Мониторинг отключен (по умолчанию)
+    RSSI_ENV_ENABLE_e22_400_22 = 0b1    // Мониторинг включен
+} RSSI_Env_e22_400_22_e;
 
+/* Переключение режимов через программное обеспечение */
 typedef enum {
-	RESERVE_2BIT = 0b00
-} Reserve_2bit_e;
+    SOFTWARE_MODE_DISABLED_22 = 0b0,   // Отключено (по умолчанию)
+    SOFTWARE_MODE_ENABLE_22 = 0b1      // Включено
+} SoftwareModeSwitch_e22_400_22_e;
 
+/* Перечисление мощности передачи */
 typedef enum {
-	SOFTWARE_MODE_DISABLED = 0b0,
-	SOFTWARE_MODE_ENABLE = 0b1
-} SoftwareModeSwitch_e22_400_e;
+    TX_POWER_22dBm_e22_400_22 = 0b00,   // 22 dBm (по умолчанию)
+    TX_POWER_17dBm_e22_400_22 = 0b01,   // 17 dBm
+    TX_POWER_13dBm_e22_400_22 = 0b10,   // 13 dBm
+    TX_POWER_10dBm_e22_400_22 = 0b11    // 10 dBm
+} TransmitPower_e22_400_22_e;
 
+/* Перечисление частот */
 typedef enum {
-	TX_POWER_22dBm_e22_400 = 0b00,
-	TX_POWER_17dBm_e22_400 = 0b01,
-	TX_POWER_13dBm_e22_400 = 0b10,
-	TX_POWER_10dBm_e22_400 = 0b11
-} TransmitingPower_e22_400_e;
-
+    FREQUENCY_410_e22_400_22 = 0,   // 410.125 MHz
+    FREQUENCY_411_e22_400_22 = 1,   // 411.125 MHz
+    FREQUENCY_412_e22_400_22 = 2,   // 412.125 MHz
+    FREQUENCY_413_e22_400_22 = 3,   // 413.125 MHz
+    FREQUENCY_414_e22_400_22 = 4,   // 414.125 MHz
+    FREQUENCY_415_e22_400_22 = 5,   // 415.125 MHz
+    FREQUENCY_416_e22_400_22 = 6,   // 416.125 MHz
+    FREQUENCY_417_e22_400_22 = 7,   // 417.125 MHz
+    FREQUENCY_418_e22_400_22 = 8,   // 418.125 MHz
+    FREQUENCY_419_e22_400_22 = 9,   // 419.125 MHz
+    FREQUENCY_420_e22_400_22 = 10,  // 420.125 MHz
+    FREQUENCY_425_e22_400_22 = 15,  // 425.125 MHz
+    FREQUENCY_430_e22_400_22 = 20,  // 430.125 MHz
+    FREQUENCY_435_e22_400_22 = 25,  // 435.125 MHz
+    FREQUENCY_440_e22_400_22 = 30,  // 440.125 MHz
+    FREQUENCY_445_e22_400_22 = 35,  // 445.125 MHz
+    FREQUENCY_450_e22_400_22 = 40,  // 450.125 MHz
+    FREQUENCY_455_e22_400_22 = 45,  // 455.125 MHz
+    FREQUENCY_460_e22_400_22 = 50,  // 460.125 MHz
+    FREQUENCY_465_e22_400_22 = 55,  // 465.125 MHz
+    FREQUENCY_470_e22_400_22 = 60,  // 470.125 MHz
+    FREQUENCY_475_e22_400_22 = 65,  // 475.125 MHz
+    FREQUENCY_480_e22_400_22 = 70,  // 480.125 MHz
+    FREQUENCY_485_e22_400_22 = 75,  // 485.125 MHz
+    FREQUENCY_490_e22_400_22 = 80,  // 490.125 MHz
+    FREQUENCY_493_e22_400_22 = 83   // 493.125 MHz
+} ActualFrequency_e22_400_22_e;
+/* Настройка вывода байтов RSSI */
 typedef enum {
-	// CHANNEL NUMBER
-	// 410.125 + CH * 1 MHz
-	// 410.125 ～ 493.125MHz
-	FREQUENCY_410_e22_400 = 0,
-	FREQUENCY_415_e22_400 = 5,
-	FREQUENCY_420_e22_400 = 10,
-	FREQUENCY_425_e22_400 = 15,
-	FREQUENCY_430_e22_400 = 20,
-	FREQUENCY_435_e22_400 = 25,
-	FREQUENCY_440_e22_400 = 30,
-	FREQUENCY_441_e22_400 = 31,
-	FREQUENCY_442_e22_400 = 32,
-	FREQUENCY_443_e22_400 = 33,
-	FREQUENCY_445_e22_400 = 35,
-	FREQUENCY_450_e22_400 = 40,
-	FREQUENCY_455_e22_400 = 45,
-	FREQUENCY_460_e22_400 = 50,
-	FREQUENCY_465_e22_400 = 55,
-	FREQUENCY_470_e22_400 = 60,
-	FREQUENCY_475_e22_400 = 65,
-	FREQUENCY_480_e22_400 = 70,
-	FREQUENCY_485_e22_400 = 75,
-	FREQUENCY_490_e22_400 = 80,
-	FREQUENCY_493_e22_400 = 83
-} ActualFrequency_e22_400_e;
+    RSSI_BYTES_DISABLED_e22_400_22 = 0b0, // Отключено (по умолчанию)
+    RSSI_BYTES_ENABLE_e22_400_22 = 0b1    // Включено
+} RSSIBytes_e22_400_22_e;
 
+/* Методы передачи данных */
 typedef enum {
-	// After enabled, when the module receives the
-	// wireless data, it will follow an RSSI strength byte
-	// after output via the serial port TXD
-	RSSI_BYTES_DISABLED_e22_400 = 0b0,
-	RSSI_BYTES_ENABLE_e22_400 = 0b1
-} RSSIBytes_e22_400_e;
+    TRANSFER_TRANSPARENT_e22_400_22 = 0b0, // Прозрачная передача (по умолчанию)
+    TRANSFER_FIXED_POINT_e22_400_22 = 0b1  // Фиксированная передача
+} TransferMethod_e22_400_22_e;
 
+/* Включение функции ретранслятора */
 typedef enum {
-	// During fixed-point transmission, the module will
-	// identify the first three bytes of serial port data as:
-	// address high + address low + channel, and use
-	// them as wireless transmission targets.
-	TRASPARENT_e22_400 = 0b0,
-	FIXED_POINT_e22_400 = 0b1
-} TransferMethod_e22_400_e;
+    REPEATER_DISABLED_e22_400_22 = 0b0, // Отключено (по умолчанию)
+    REPEATER_ENABLE_e22_400_22 = 0b1    // Включено
+} RepeaterFunction_e22_400_22_e;
 
+/* Включение функции LBT (Listen Before Talk) */
 typedef enum {
-	// After the repeater function is enabled, if the target
-	// address is not the module itself, the module will
-	// start a forwarding ;
-	// In order to prevent data from being transmitted
-	// back, it is recommended to use it in conjunction
-	// with fixed-point mode ; that is, the destination
-	// address and source address are different.
-	REPITER_DISABLED_e22_400 = 0b0,
-	REPITER_ENABLE_e22_400 = 0b1
-} RepeaterFunction_e22_400_e;
+    LBT_DISABLED_e22_400_22 = 0b0, // Отключено (по умолчанию)
+    LBT_ENABLE_e22_400_22 = 0b1    // Включено
+} LBTEnable_e22_400_22_e;
 
+/* Режимы WOR (Wake on Radio) */
 typedef enum {
-	LBT_DISABLED_e22_400 = 0b0,
-	LBT_ENABLE_e22_400 = 0b1
-} LBTEnable_e22_400_e;
+    WOR_MODE_RECEIVER_e22_400_22 = 0b0,    // Приемник WOR (по умолчанию)
+    WOR_MODE_TRANSMITTER_e22_400_22 = 0b1 // Передатчик WOR
+} WORMode_e22_400_22_e;
 
+/* Периоды WOR */
 typedef enum {
-	// When enabled, wireless data will be monitored
-	// before transmission, which can avoid interference
-	// to a certain extent, but may cause data delays;
-	// The maximum dwell time of LBT is 2 seconds.
-	// The wireless data will be transmitted forcibly after
-	// 2 seconds.
-	WOR_MODE_RECIVER_e22_400 = 0b0, // default
-	WOR_MODE_TRANSMITER_e22_400 = 0b1
-} WORMode_e22_400_e;
-
-typedef enum {
-	WOR_CYCLE_500ms_e22_400 = 0b000,
-	WOR_CYCLE_1000ms_e22_400 = 0b001,
-	WOR_CYCLE_1500ms_e22_400 = 0b010
-} WORCycleTime_e22_400_e;
-
+    WOR_CYCLE_500ms_e22_400_22 = 0b000,  // 500 мс
+    WOR_CYCLE_1000ms_e22_400_22 = 0b001, // 1000 мс
+    WOR_CYCLE_1500ms_e22_400_22 = 0b010, // 1500 мс
+    WOR_CYCLE_2000ms_e22_400_22 = 0b011, // 2000 мс
+    WOR_CYCLE_4000ms_e22_400_22 = 0b111  // 4000 мс
+} WORCycleTime_e22_400_22_e;
 
 #endif /* INC_E22_EBYTE_E22_400T22S_CONST_H_ */
